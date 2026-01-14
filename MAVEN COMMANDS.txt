@@ -8,3 +8,31 @@ mvn -v
 C:\Users\arins>mvn archetype:generate -DgroupId=com.arindam -DartifactId=my-maven-app -DarchetypeArtifactId=maven-archetype-quickstart  -DinteractiveMode=false
 
 C:\Users\arins\my-maven-app>mvn clean package
+===============================================================================
+
+ADD THE PLUGINS AFTER </dependencies> TAG IN pom.xml FILE
+=======================================================================
+
+  <build>
+    <plugins>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>com.arindam.App</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+
+    </plugins>
+</build>
+==========================================================================
+THEN YOU CAN RUN
+========================================================================
+C:\SOFTWARE\sts-4.20.0.RELEASE\AEC_Boot_Practical\TestMaven\target>java -jar TestMaven-0.0.1-SNAPSHOT.jar
+Hello World!
