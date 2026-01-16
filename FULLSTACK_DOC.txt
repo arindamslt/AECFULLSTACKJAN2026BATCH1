@@ -1,0 +1,138 @@
+DATE:16.01.2026
+===========================================================================================
+FULL STACK DEVELOPMENT USING JAVA
+=============================================
+SOFTWARE REQUIRED
+========================
+JAVA21
+STS
+MYSQL
+VISUAL SOURCE CODE
+POSTMAN
+======================================================================================
+DBMS
+==========================================================================
+DATABASE MANAGEMENT SYSTEM
+DATABASE
+=========================================================================
+DBMS===DATABASE+SQL
+DATABASE
+===================================
+COLLECTION OF INTERELATED TABLES OR DATA
+RDBMS
+===============================
+RELATIONAL DATABASE MANAGEMENT SYSTEM
+DATABASE+SQL
+SOFTWARE
+===============
+ORACLE
+MYSQL
+SQLSERVER
+SYBASE
+SQL
+================================
+SQL NON PROCEDURAL LANGUGAE
+JAVA
+======================================
+ARRA
+HOW
+WHAT
+SQL
+===========================
+ONLY KNOW THE WHAT PART
+HOW PART IS NOT KNOWN TO US
+SELECT * FROM STUDENT;
+================================================
+SQL COMMANDS
+===============================================
+DDL==DATA DEFINATION LANGUAGE==CREATE,ALTER,RENAME,TRUNCATE,DROP,PURGE
+DML==DATA MANIPULATION LANGUAGE===INSERT,UPDATE,DELETE,MERGE
+DATA RETRIEVAL====SELECT
+TCL===TRANSACTION CONTROL LANGUAGE===COMMIT,ROLLBACK
+DCL=====DATA CONTROL LANGUAGE===GRANT,REVOKE
+=============================================================
+DATA TYPES IN MYSQL
+==================================
+CHAR
+VARCHAR
+INT
+DECIMAL
+DATE============YYYY-MM-DD==2026-01-16
+TIMESTAMP=====BOTH DATE AND TIME
+SNAME====ASHUTOSH
+CHAR(25)
+VARCHAR(25)
+CONSTRAINT
+================================================================
+BEFORE INSERTING ANY DATA INTO TABLE YOU HAVE TO SATISFY THE RULES AND REGULATIONS
+TYPES OF CONSTRAINTS
+===================================
+1.PRIMARY KEY===DOES NOT ACCEPT NULL VALUE AS WELL AS DUPLICATE VALUE
+2.UNIQUE KEY=====ACCEPT NULL VALUE BUT DOES NOT ACCEPT DUPLICATE VALUE
+3.NOT NULL====CAN'T INSERT NULL VALUE
+4.CHECK CONSTRAINTS==SUPPORT PREDEFINED VALUES EX:GENDER===M/F
+5.FOREIGN KEY==ACCEPT OTHER TABLE PRIMARY KEY VALUE
+6.DEFAULT
+============================================================================
+=========================================================================================
+MAVEN
+=========================================================================================
+JAVA21
+STS ECLIPSE VERSION
+WINZIP
+=================================================================================
+MAVEN
+================================================================================
+MAVEN IS A BUILD TOOL
+PURPOSE
+===========================================
+AUTOMATE THE BUILD PROCESS
+=========================================================
+BUID PROCESS
+======================================================
+1.DOWNLOAD JAR FILES/LIBRARIES
+2.COMPILE THE SOURCE CODE
+3.EXECUTE TEST CASES
+4.PACKAGE INTO JAR FILE OR WAR FILE
+========================================================
+TERMS
+==========================================================
+ARCHIETYPE== TYPE OF PROJECT
+            QUCIK START, WEB
+GROUP ID====ORGANIZATION NAME
+            EX:COM.XYZLTD
+ARTIFACT ID==NAME OF THE PROJECT
+VERSION======SNAPSHOT===UNDER DEVELOPING
+             RELEASE
+DEPENDENCY===BY THE HELP OF DEPENDENCY WE HAVE TO DOWNLOAD JAR FILES
+REPOSITORY==LOCATION WHERE JAR FILES DOWNLOADED
+THREE TYPES
+=============================================
+LOCAL
+CENTRAL
+REMOTE
+==========================================================================
+POM.XML===PROJECT OBJECT MODEL
+IT IS HEART OF THE MAVEN
+HERE WE WRITE PLUGIN AND DEPENDENCY
+========================================================================
+GOAL
+=======================================================================
+CLEAN
+COMPILE
+TEST
+PACKAGE
+=========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
