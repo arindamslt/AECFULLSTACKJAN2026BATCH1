@@ -124,6 +124,351 @@ TEST
 PACKAGE
 =========================================================================
 
+DATE:17.01.2026
+=======================================================================
+JDBC
+===========================
+JAVA DATABASE CONNECTIVITY
+DATABASE:MYSQL
+JAVA WITH MYSQL
+import java.sql.*;
+java.sql.*====SET OF CLASSES AND SET OF INTERFACES
+INTERFACES
+=======================================
+Connection==TO ESTABLISH THE CONNECTION
+Statement====EXECUTE SQL STATEMENT
+PreparedStatement==EXECUTE PRECOMPILED SQL STATEMENT
+CallableStatement===EXECUTE STORED PROCEDURE
+ResultSet=======DATA STORE INTO RESULTSET
+ResultsetMeData===GIVE DETAILS INFORMATION OF RESULTSET
+DatabaseMetaData===GIVE THE DETAILS INFORMATION OF DATABASE
+CLASSES
+================================================
+DriverManager===REGSITER AND LOAD THE JDBC DRIVER
+Date=====DEALS WITH DAE DATA TYPE
+Timestamp===DEALS WITH BOTH DATE AND TIME
+EXCEPTION HANDLE HERE
+========================================
+ClassNotFoundException
+SQLException
+TYPES OF JDBC DRIVER
+===============================================
+1.TYPE-I DRIVER
+2.TYPE-II DRIVER
+3.TYPE-III DRIVER
+4.TYPE-IV DRIVER
+===========================================================================
+STEPS OF COMMUNICATION
+==================================================
+1.import java.sql.*;
+2.REGISTER AND LOAD THE DRIVER
+3.ESTABLISH THE COMMUNICATION
+4.CREATE THE STATEMENT
+5.EXECUTE THE STATEMENT
+6.RETRIEVE DATA INTO RESULTSET
+7.CLOSE CONNECTION AND STATEMENT
+======================================================================
+TABLE NAME:PRODUCT
+ FIELD NAME   DATATYPE   SIZE CONSTRAINT
+ PID          VARCHAR     10  PRIMARY KEY
+ PNAME        VARCHAR      25  NOT NULL
+  PQTY         INT
+PRICE          DECIMAL
+=======================================================================
+ysql> USE FULLSTACKJAVADB;
+Database changed
+mysql> SHOW TABLES;
++---------------------------+
+| Tables_in_fullstackjavadb |
++---------------------------+
+| customer                  |
+| dept                      |
+| dept1                     |
+| emp                       |
+| outerjoinvw               |
++---------------------------+
+5 rows in set (0.06 sec)
+CREATE TABLE PRODUCT
+(PID  VARCHAR(10),
+ PNAME VARCHAR(25) NOT NULL,
+ PQTY  INT,
+ PRICE DECIMAL,
+ CONSTRAINT PRODUCT_PID_PK PRIMARY KEY(PID)
+);
+
+
+mysql> DESC PRODUCT;
++-------+---------------+------+-----+---------+-------+
+| Field | Type          | Null | Key | Default | Extra |
++-------+---------------+------+-----+---------+-------+
+| PID   | varchar(10)   | NO   | PRI | NULL    |       |
+| PNAME | varchar(25)   | NO   |     | NULL    |       |
+| PQTY  | int           | YES  |     | NULL    |       |
+| PRICE | decimal(10,0) | YES  |     | NULL    |       |
++-------+---------------+------+-----+---------+-------+
+
+INSERT INTO PRODUCT VALUES('P1','TV',5,25000.00);
+INSERT INTO PRODUCT VALUES('P2','LAPTOP',10,45000.00);
+
+SELECT * FROM PRODUCT ORDER BY PNAME;
+mysql> SELECT * FROM PRODUCT ORDER BY PNAME;
++-----+--------+------+-------+
+| PID | PNAME  | PQTY | PRICE |
++-----+--------+------+-------+
+| P2  | LAPTOP |   10 | 45000 |
+| P1  | TV     |    5 | 25000 |
++-----+--------+------+-------+
+
+
+System.out.println(rs.getString(1)+"===>"+rs.getString(2)+"===>"+rs.getInt(3)
++"===>"+rs.getDouble(4));
+
+HIBERNATE
+====================================================================================
+HIBERNATE IS A ORM TOOL
+ORM===OBJECT RELATIONAL MAPPING
+.java===compile===.class===container===.java===.class===O/P
+LIGHT WEIGHT
+===============================
+.java===compile===.class===container===.class==o/p
+
+CLASS===EMPLOYEE
+TABLE===EMPLOYEE_MASTER
+EID===AUTOGENRATED
+ENAME===25
+JOB===25
+JOINDT===TODAY'DATE
+WORKHR===DATE AND TIME
+SAL
+
+================================================
+
+mysql> DESC EMPLOYEE_MASTER;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| eid    | int         | NO   | PRI | NULL    | auto_increment |
+| ename  | varchar(25) | NO   |     | NULL    |                |
+| DESIG  | varchar(25) | YES  |     | NULL    |                |
+| joindt | date        | YES  |     | NULL    |                |
+| sal    | double      | YES  |     | NULL    |                |
+| workhr | datetime(6) | YES  |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+mysql> SELECT * FROM EMPLOYEE_MASTER;
++-----+-------+---------+------------+-------+----------------------------+
+| eid | ename | DESIG   | joindt     | sal   | workhr                     |
++-----+-------+---------+------------+-------+----------------------------+
+|   1 | ROBIN | MANAGER | 2026-01-17 | 65000 | 2026-01-17 15:39:29.142000 |
+|   2 | ALOKE | MANAGER | 2026-01-17 | 75000 | 2026-01-17 15:39:29.142000 |
++-----+-------+---------+------------+-------+----------------------------+
+mysql> SELECT * FROM CANDIDATE;
++--------+---------+
+| candid | candnm  |
++--------+---------+
+| C1     | KOLKATA |
+| C2     | DELHI   |
++--------+---------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM ADHAR;
++-----------+-------+
+| adharid   | city  |
++-----------+-------+
+| AH656565  | SUMAN |
+| AH8686688 | AYAN  |
++-----------+-------+
+2 rows in set (0.02 sec)
+mysql> SELECT * FROM ADHAR;
++-----------+-------+
+| adharid   | city  |
++-----------+-------+
+| AH656565  | SUMAN |
+| AH8686688 | AYAN  |
++-----------+-------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM CANDIDATE;
++--------+---------+-----------+
+| candid | candnm  | adhar_id  |
++--------+---------+-----------+
+| C1     | KOLKATA | AH656565  |
+| C2     | DELHI   | AH8686688 |
++--------+---------+-----------+
+DATE:19.01.2026
+CRUD OPERATION IN HIBERNATE
+===============================================================================
+================================================================================
+JOB
+JOBID
+JOBNM
+DOMAIN
+CRUD OPERATAION
+==============================================
+INSERT
+UPDATE
+DELETE
+FETCH
+====================================================
+mysql> DESC JOB;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| jobid  | varchar(10) | NO   | PRI | NULL    |       |
+| domain | varchar(25) | NO   |     | NULL    |       |
+| jobnm  | varchar(25) | NO   |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+
+mysql> SELECT * FROM JOB;
++-------+------------+-----------+
+| jobid | domain     | jobnm     |
++-------+------------+-----------+
+| J1    | PYTHON     | ANALYST   |
+| J2    | SPRINGBOOT | FULLSTACK |
++-------+------------+-----------+
+
+FETCH DATA IN HIBERNATE
+=============================================
+THREE WAYS
+===========================================
+HQL===HIBERNATE QUERY LANGUAGE=======IT ONLY KNOWS ENTITY CLASS NAME
+JPQL==JAVA PERSISTANCE QUERY LANGUAGE==IT ONLY KNOWS ENTITY CLASS NAME
+NATIVE SQL===NORMAL SQL================IT KNOWS DATABASE TABLE ONLY
+================================================================================
+SPRING
+==============================================================================
+DESKTOP APPLICATION=====CORE JAVA,AWT,SWING,SPRING              ===JAR FILE
+WEB APPLICATION=========SERVLET,JSP,SPRING                      ===WAR FILE
+ENTERPRISE APPLICATION===EJB,SPRING                             ====EAR FILE(JAR+WAR)
+==================================================================================
+DEFINATION OF SPRING
+=============================================================================
+SPRING IS A OPEN SOURCE  LIGHT WEIGHT DEPENDENCY INJECTION BASED FRAMEWORK SOFTWARE
+TO DEVELOP JAVA/JEE BASED ENTERPRISE APPLICATION
+HEAVY WEIGHT COMPONENT
+.java===compile==.class===container==.java==.class===o/p
+LIGHT WEIGHT
+=========================================================
+.java==compiler===.class===container==take .class===O/P
+POJO
+XML CLASS
+ANNOTATION
+FRAMEWORK
+==========================================================
+FRAMEWORK==TECHNOLOGY+DESIGN PATTERN
+MAILING===JAVAMAIL
+SMS===JMS,KAFKA
+DESIG PATTERN
+=====================================
+WELL APPROVED SOLUTION
+PURPOSE OF FRAMEWORK
+=========================
+RAD===RAPID APPLICATION DEVELOPMENT
+FEATURES OF THE SPRING
+==========================================
+SPRING ISN USED IN DISTRIBUTED APPLICATION
+SPRING SUPPORT CONTAINER SYSTEM
+CONATAINER SYSTEM
+=====================================
+1.SCAN THE CLASSES
+2.CREATE THE OBJECT
+3.PROVIDE THE DATA TO THE OBJECT
+4.LINKING THE OBJECT
+5.DESTROY THE OBJECT
+IN SPRING THE CONTAINER IS CALLED SPRING CONTAINER
+========================================================
+SPRING CONTAINER ARE TWO TYPES
+===========================================
+1.BEAN FACTORY======NOT USED 
+2.APPLICATION CONTEXT==ALSO CALLED IVERSION CONTROL
+BOTH BEANFACTORY AND APPLICATION CONTEXT ARE INTERFACE PROVIDED BY SPRING
+
+MODULES IN SPRING
+===========================================
+1.SPRING CORE
+2.SPRING DAO
+3.SPRING AOP
+4.SPRING CONTEXT
+5.SPRING WEB
+6.SPRING MVC
+7.SPRING ORM
+========================================================
+SPRING CORE
+==============================================
+THE RULES GIVEN BY THE SPRING
+SPRINGBEAN===CLASS+RULES PROVIDED BY SPRING
+INSTANCE VARIABLE
+=====================================================
+class Test
+{
+  private String tested;
+private String testnm;
+ALL INSTANCE VARIABLE IN SPRING IS CALLED DEPENDENCY
+TO PROVIDE DATA INTO DEPENDENCY IS CALLED DEPENDENCY INJECTION
+TYPES OF DEPENDENCY INJECTION
+==============================================
+1.PRIMITIVE TYPE==INT,DOUBLE,FLOAT
+2.LIST===LIST,SET,MAP,PROPERTIES
+3.CONSTRUCTOR
+4.INTERFACE
+5.FIELD
+ANNOTATION
+========================
+1.BASIC ANNOTATION
+2.STREOTYPE ANNOTATION
+=====================================================
+SPRING PRACTICAL
+==================
+1.NEED A MAVEN PROJECT
+2.ADD SPRING DEPENDENCY IN POM.XML
+3.CREATE A SPRING BEAN CLASS
+4.CREATE SPRING CONFIGURE CLASS USING ANNOTATION
+5.MAIN CLASS
+========================================================================
+SPRING BEAN CLASS PACKAGE===com.yourname.bean
+SPRING CONFIG CLASS PACKAGE===com.yourname.config
+MAIN CLASS   PACKAGE==========com.yourname.app
+=====================================================================
+application.properties
+	@Value("${drivername}")
+
+SETTER INJECTION
+===================================================================
+PRIMITIVE TYPES===INTEGER,FLOAT,DOUBLE,BOOLEAN,STRING
+
+COLLECTION TYPES===LIST,SET,MAP,PROPERTIES
+====================================================================
+LIST=== ALLOW THE DUPLICATE VALUE
+SET======DOESN'T ALLOW DUPLICATE VALUE
+MAP=======COMBINATION OF KEY & VALUE PAIR.WHERE KEY'S ARE NOT DUPLICATED VALUE MAY BE
+           DUPLICATE.
+PROPERTIES====COMBINATION OF KEY & VALUE PAIRS.HERE KEY'S ARE NOT DUPLICATED 
+              VALUE MAY BE DUPLICATED.BUT BOTH KEY & VALUE ARE STRING
+AUTOWIRE
+=========================================================
+LINKING BETWEEN THE OBJECTS IN SPRING CONTAINER IS CALLED AUTOWIRE
+TYPES OF AUTOWIRE
+===========================================
+byName
+byType
+autodetect
+constructor
+nowire
+=========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
