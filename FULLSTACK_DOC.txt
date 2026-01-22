@@ -652,19 +652,175 @@ mysql> SELECT * FROM TOUR WHERE TOURNM LIKE 'K%';
 +--------+----------+-------------+
 http://localhost:8080/?id=1
 SELECT * FROM TOUR WHERE TOURNM LIKE CONCAT(:name,'%')
+DATE:21.01.2026
+========================================================================
+RESTFULL WEBSERVICES
+=========================================================================
+WEBSERVICE
+========================================================================
+WEBSERVICE USED TO COMMUNICATE BETWEEN TWO OR MORE INTER OPERABLE APPLICATIONS.
+TYPES OF WEBSERVICES
+====================================================
+SOAP====SIMPLE OBJECT ACCESS PROTOCOL
+REST====REPRESENTATIONAL STATE TRANSFER
+HTTP METHODS
+===============================================
+POST===POST THE DATA INTO THE SERVER
+GET====GET THE DATA FROM SERVER
+PUT=====UPDATE DATA TO THE SERVER
+DELETE===DELETE DATA TO THE SERVER
+PATCH===UPDATE DATA BUT NOT ALL TO THE SERVER
+HTTP ERROR CODE
+==========================================
+404===NOT FOUND
+405==INTERNAL SERVER ERROR
+200==OK
+==============================================
+ACTION BASED URL
+===============================================
+http://www.xyzltd.com/?1d=1
+RESOURCE BASED URL
+======================================
+http://www.xyzltd.com/1
+================================================
+JSON==JAVASCRIPT OBJECT NOTATION
+JSON FORMAT
+=============================
+{
+ "pid":"P1",
+ "pname":"TV",
+ "pqty":5,
+ "price":25000.00
+}
+
+@Repository===OBJECT CREATION+DATABASE OPERATION
+@service====OBJECT CREATION+TRANSACTION MANAGEMENT
+@controller==OBJECT CREATION+WEB APPLICATION
+@RestController==OBJECT CREATION+ RESTFULL WEB SERVICES
+REST API PROJECT STRUCTURE
+====================================
+com.arindam.model====ENTITY CLASS
+comm.arindam.repository===REPOSITORY(INTERFACE)
+com.arindam.service========SERVICE CLASS
+com.arindam.controller====REST CONTROLLER
+
+http://localhost:1004/product/add
+http://localhost:1004/product/del
 
 
+mysql> DESC PRODUCT_MASTER;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| pid   | varchar(10) | NO   | PRI | NULL    |       |
+| pname | varchar(25) | NO   |     | NULL    |       |
+| pqty  | int         | YES  |     | NULL    |       |
+| price | double      | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+ADDING DATA
+=============================
+localhost:1004/product/add
+{
+   "pid":"P1",
+   "pname":"TV",
+   "pqty":1,
+   "price":25000.00
+
+}
 
 
+mysql> SELECT * FROM PRODUCT_MASTER;
++-----+-------+------+-------+
+| pid | pname | pqty | price |
++-----+-------+------+-------+
+| P1  | TV    |    1 | 25000 |
++-----+-------+------+-------+
+1 row in set (0.03 sec)
 
+FETCHING DATA
+====================================
+http://localhost:1004/product/fetch
 
-
-
-
-
-
-
-
+BASED ON PRIMARY KEY FETCH THE DATA
+==========================================================
+http://localhost:1004/product/fetch/P1
+                                    PATH VARIABLE
+DELETING DATA
+============================================================
+http://localhost:1004/product/del/P1
+UPDATE DATA
+===============================================================
+http://localhost:1004/product/upd/P1
+================================================================
+FRONT ND
+==========================================================
+REACT JS
+==================================================
+PREREQUISITE
+================================================
+HTML
+CSS
+JAVASCRIPT
+ES6
+BOOTSTRAP
+=============================================================
+IDE:VISUAL STUDIO CODE
+SOFTWARE:ODE JS
+==============================================================================
+JAVASCRIPT
+===============================================================================
+JAVASCRIPT IS A PROGRAMMING LANGUAGE
+JAVASCRIPT CAN COMMUNICATE WITH DATABASE,WEBSERVER,APPLICATION SERVER
+PURPOSE
+==========================================================================
+1.CREATING DYNAMIC USER INTERFACE
+2.CLIENT SIDE AND SERVER SIDE VALIDATION
+3.COMMUNICATE TO FRONT END AND BACKEND APPLICATION
+AREA OF JAVASCRIPT
+======================================================
+1.DESKTOP APPLICATION
+2.WEB APPLICATION
+3.MOBILE APPLICATION
+4.MACHINE LEARNING APP
+==============================================================
+JAVASCRIPT RUNTIME ENVIRONMENT
+==============================================================
+NODE JS
+===============================================================
+TYPES OF DATA TYPE
+=============================================================
+PRIMITIVE TYPES===string,number,boolean,symbol,bigint,null,undefined
+NON PRIMITIVE:object
+==================================================================
+IN CASEOF JAVASCRIPT VARIABLE DECLARED BY
+===========================================
+var
+const
+let
+FUNCTION IN JAVASCRIPT
+=======================================================
+NORMAL OR CONCRETE FUNCTION
+PARAMERISED FUNCTION
+FUNCTION WITH RETURN STATEMENT
+ANNONYMOUS FUNCTION
+CALLBACK FUNCTION
+HIGHER ORDER FUNCTION
+ARROW FUNCTION
+FUNCTION EXPRESSION
+======================================================================
+ECMASCRIPT(ES6)
+===================================================================
+FEATURES OF ES6
+=====================================================================
+1.SPREAD OPERATOR
+2.REST PARAMETER
+3.DESTRUCTING OF OBJECT
+4.ARROW FUNCTION
+5.LET VS CONST VS VAR
+=========================================================================
+EVENT HANDELLING
+=========================================================
 
 
 
