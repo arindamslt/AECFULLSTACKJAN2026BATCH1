@@ -1,0 +1,33 @@
+What is BindingResult?
+
+It contains:
+
+All validation errors
+
+Field name
+
+Rejected value
+
+Error codes
+
+Default message
+
+Think of it as Spring’s error container.
+getFieldErrors()
+.getFieldErrors()
+
+What it returns
+
+A list of FieldError objects.
+
+Each FieldError contains:
+
+field → pname
+
+defaultMessage → PRODUCT NAME MUST BE GIVEN
+
+rejectedValue → ""
+FieldError {
+  field = "pname"
+  defaultMessage = "PRODUCT NAME MUST BE GIVEN"
+}
