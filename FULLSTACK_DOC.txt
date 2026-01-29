@@ -919,6 +919,44 @@ USEEFFECT
 ===================================================================
 INTEGRATE SPRING BOOT WITH REACT JS
 
+What is BindingResult?
+It contains:
+1.All validation errors
+2.Field name
+3.Rejected value
+4.Error codes
+5.Default message
+======================================================
+.getFieldErrors()
+======================================================
+
+RETURN A list of FieldError objects.
+
+Each FieldError contains:
+
+field → pname
+
+defaultMessage → PRODUCT NAME MUST BE GIVEN
+
+rejectedValue → ""
+FieldError {
+  field = "pname"
+  defaultMessage = "PRODUCT NAME MUST BE GIVEN"
+}
+===========================================================
+SERVICE CLASS
+=========================================================
+public void deleteData(String pid)
+	{
+		Product ps=prepo.findById(pid).orElseThrow(
+				()->new ResourceNotFoundException("PRODUCT ID NOT FOUND:"+pid));
+		
+			prepo.delete(ps);
+		
+	}
+===============================================================
+DATE:29.01.2026
+=============================================================================
 
 
 
