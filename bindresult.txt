@@ -31,3 +31,21 @@ FieldError {
   field = "pname"
   defaultMessage = "PRODUCT NAME MUST BE GIVEN"
 }
+
+
+
+React Form
+   ↓
+Axios POST
+   ↓
+Spring @Valid fails
+   ↓
+MethodArgumentNotValidException thrown
+   ↓
+GlobalExceptionHandler catches it
+   ↓
+FieldErrors converted to Map
+   ↓
+400 response sent
+   ↓
+React displays message
