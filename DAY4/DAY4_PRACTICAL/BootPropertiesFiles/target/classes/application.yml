@@ -1,0 +1,6 @@
+myapp: 
+ db: 
+  drivernm: com.mysql.cj.driver
+  url: localhost:3306/fullstackdb
+  uname: root
+  pass: root
