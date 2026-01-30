@@ -1,8 +1,0 @@
-IN App.js
-===========================
-DELETE <header>  </header>
-COMMENT ON 
-//import logo from './logo.svg';
-IN index.html IN public folder
-==============================
-remove the comment part in body
