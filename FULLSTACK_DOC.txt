@@ -1002,9 +1002,94 @@ VALIDATION
 =============================================================================
 
 
+DATE:30.01.2026
+
+{
+   "uname": "SUMAN123",
+   "pass":"test1234",
+   "nm": "SUMAN",
+   "email":"sm@gmail.com",
+   "phno":"662366767"
+  
+}
+mysql> SELECT * FROM REGISTER;
++----------+--------------+-------+----------+-----------+
+| uname    | email        | nm    | pass     | phno      |
++----------+--------------+-------+----------+-----------+
+| SUMAN123 | sm@gmail.com | SUMAN | test1234 | 662366767 |
++----------+--------------+-------+----------+-----------+
+
+mysql> SELECT * FROM REGISTER;
++----------+--------------+-------+----------+-----------+
+| uname    | email        | nm    | pass     | phno      |
++----------+--------------+-------+----------+-----------+
+| ALOKE123 | al@gmail.com | ALOKE | 123456   | 45545445  |
+| SUMAN123 | sm@gmail.com | SUMAN | test1234 | 662366767 |
++----------+--------------+-------+----------+-----------+
+SELECT * FROM REGISTER WHERE UNAME='SUMAN123' AND PASS='test1234';
+
+mysql> SELECT * FROM REGISTER WHERE UNAME='SUMAN123' AND PASS='test1234';
++----------+--------------+-------+----------+-----------+
+| uname    | email        | nm    | pass     | phno      |
++----------+--------------+-------+----------+-----------+
+| SUMAN123 | sm@gmail.com | SUMAN | test1234 | 662366767 |
++----------+--------------+-------+----------+-----------+
+{
+   "fid": "F1",
+   "oqty":2,
+   "uname": "ALOKE123"
+  
+}
+
+mysql> SELECT * FROM ORDER_DTLS;
++-----+-----+------------+------+----------+
+| oid | fid | odt        | oqty | uname    |
++-----+-----+------------+------+----------+
+|   1 | F1  | 2026-01-30 |    2 | ALOKE123 |
++-----+-----+------------+------+----------+
+mysql> DESC FOOD;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| fid   | varchar(10) | NO   | PRI | NULL    |       |
+| fname | varchar(25) | NO   |     | NULL    |       |
+| price | double      | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.06 sec)
+
+mysql> DESC ORDER_DTLS;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| oid   | int          | NO   | PRI | NULL    | auto_increment |
+| fid   | varchar(10)  | NO   |     | NULL    |                |
+| odt   | date         | YES  |     | NULL    |                |
+| oqty  | int          | YES  |     | NULL    |                |
+| uname | varchar(255) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+
+SELECT F.FID,F.FNAME,O.OQTY,O.ODT,F.PRICE,F.PRICE*O.OQTY TOTALPRICE,O.UNAME
+FROM FOOD F,ORDER_DTLS O
+WHERE F.FID=O.FID AND UNAME='ALOKE123';
 
 
+-----+-------------+------+------------+-------+------------+----------+
+| FID | FNAME       | OQTY | ODT        | PRICE | TOTALPRICE | UNAME    |
++-----+-------------+------+------------+-------+------------+----------+
+| F1  | MOMO        |    2 | 2026-01-30 |   250 |        500 | ALOKE123 |
+| F1  | MOMO        |    5 | 2026-01-30 |   250 |       1250 | AYAN123  |
+| F2  | FRIED RICE  |    6 | 2026-01-30 |   400 |       2400 | SUMAN123 |
++-----+-------------+------+------------+-------+------------+----------+
+mysql> SELECT F.FID,F.FNAME,O.OQTY,O.ODT,F.PRICE,F.PRICE*O.OQTY TOTALPRICE,O.UNAME
+    -> FROM FOOD F,ORDER_DTLS O
+    -> WHERE F.FID=O.FID AND UNAME='ALOKE123';
++-----+-------+------+------------+-------+------------+----------+
+| FID | FNAME | OQTY | ODT        | PRICE | TOTALPRICE | UNAME    |
++-----+-------+------+------------+-------+------------+----------+
+| F1  | MOMO  |    2 | 2026-01-30 |   250 |        500 | ALOKE123 |
++-----+-------+------+------------+-------+------------+----------+
 
+FROM FOOD F,ORDER_DTLS O
 
 
 
