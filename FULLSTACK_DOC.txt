@@ -957,16 +957,49 @@ public void deleteData(String pid)
 ===============================================================
 DATE:29.01.2026
 =============================================================================
+SPRING BOOT REACT JS MYSQL    INTEGRATION USING PROJECT
+=============================================================================
+FRONT END===REAC JS
+BACK END====SPRING BOOT
+TOOLS===MAVEN,POSTMAN
+DATABASE====MYSQL
+======================================================================
+SECURITY IMPLEMENTATION======SPRING SECURITY
+==============================================================================
+USER====ADMIN
+      ==CLIENT
+================================================================================
+DATABASE:FDAPPDB
+===============================================================================
+CREATE DATABASE FDAPPDB;
+SPRING BOOT PROJECT
+======================================
+FoodApp
+DEPENDENCY REQUIRED
+===============================
+MYSQL
+DATA JPA
+SPRING WEB
+SPRING DEV TOOLS
+VALIDATION
+================================================
+"error";:
+"defaultMesaage":"FOOD ID NOT FOUND"
 
 
+{
+   "fid": "F1",
+   "fname":"MOMO",
+  "price": 250.00
+}
 
-
-
-
-
-
-
-
+=================================================================================
+ C:\FrondEndFullStackJava> npx create-react-app foodapp
+ C:\FrondEndFullStackJava> cd foodapp
+ C:\FrondEndFullStackJava\foodapp> npm install bootstrap
+                                   npm install axios
+                                   npm install react-router-dom
+=============================================================================
 
 
 
